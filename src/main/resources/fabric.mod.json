@@ -1,0 +1,23 @@
+
+{
+  "schemaVersion": 1,
+  "id": "basefinder",
+  "version": "${version}",
+  "name": "BaseFinder",
+  "description": "Lightweight chest finder for Minecraft.",
+  "environment": "client",
+  "entrypoints": {
+    "main": [
+      "ua.basefinder.BaseFinder"
+    ],
+    "client": [
+      "ua.basefinder.BaseFinderClient"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=0.16.10",
+    "minecraft": "1.21.4",
+    "java": ">=21",
+    "fabric-api": "*"
+  }
+}
