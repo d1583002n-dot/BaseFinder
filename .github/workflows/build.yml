@@ -30,10 +30,16 @@ jobs:
       - name: Build BaseFinder
         run: gradle build --no-daemon
 
+      - name: List build outputs
+        if: always()
+        run: |
+          echo "Checking build/libs..."
+          find build -type f -name "*.jar" -print || true
+
       - name: Upload JAR
         uses: actions/upload-artifact@v4
         with:
           name: BaseFinder-1.1.0
-          path: build/libs/basefinder-1.1.0.jar
+          path: build/libs/*.jar
           if-no-files-found: error
           
